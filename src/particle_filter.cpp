@@ -200,7 +200,8 @@ void ParticleFilter::resample() {
    for(int i=0; i<num_particles; i++){
      newParticles.push_back(particles[distribution(gen)]);
    }
-   particles = newParticles;
+   //particles = newParticles;
+   particles = move(newParticles);  // suggestions
 }
 
 void ParticleFilter::SetAssociations(Particle& particle,
